@@ -65,7 +65,7 @@ export default function HowItWorks() {
       <div className="max-w-4xl mx-auto text-center mb-12">
         <p className="uppercase text-sky-500 font-semibold mb-2">How It Works</p>
         <h2 className="text-3xl sm:text-4xl font-bold">
-          From Order to Delivery—<br className="hidden sm:inline" />100% Hassle-Free
+          From Order to Delivery—<br className="hidden sm:inline" />With Ease
         </h2>
       </div>
 
