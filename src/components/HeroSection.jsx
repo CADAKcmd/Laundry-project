@@ -21,7 +21,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block bg-white text-sky-600 font-semibold text-sm px-4 py-1 rounded-full mb-4 shadow">
-            Welcome to Launder
+            Welcome to Success Laundry
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-snug mb-4">
             Experience the <br /> New Level of Laundry

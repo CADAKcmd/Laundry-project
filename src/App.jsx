@@ -7,7 +7,9 @@ import BookNow from "./components/BookNow";
 import HowItWorks from "./components/HowItWorks";
 import WhyChooseUs from "./components/WhyChooseUs";
 import GetStarted from "./components/GetStarted";
+
 import Footer from "./components/Footer";
+import LocationMap from "./components/LocationMap";
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
       <HowItWorks />
       <WhyChooseUs />
       <GetStarted />
+      <LocationMap />
       <Footer />
     </div>
   );

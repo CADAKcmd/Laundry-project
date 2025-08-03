@@ -14,14 +14,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-white border-b shadow-sm">
-      {/* --- Top Contact Bar (Hidden on Mobile) --- */}
+    <header className="w-full bg-white border-b shadow-sm fixed top-0 left-0 z-50">
+      {/* Top Contact Bar */}
       <div className="bg-gray-100 px-4 py-2 text-sm text-gray-800 hidden md:flex">
         <div className="flex w-full items-center justify-between gap-2">
           <div className="flex items-center gap-6 text-base">
             <span className="flex items-center gap-2">
               <MdPhone className="text-blue-600 text-xl" />
-              <span className="font-medium"> +234 913 423 0326, +234 705 400 1332</span>
+              <span className="font-medium">+234 913 423 0326, +234 705 400 1332</span>
             </span>
             <span className="flex items-center gap-2">
               <MdEmail className="text-blue-600 text-xl" />
@@ -40,19 +40,22 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* --- Main Navbar --- */}
+      {/* Main Navbar */}
       <nav className="px-4 py-3 bg-white">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <div className="flex items-center gap-2">
             <img src="/assets/Rr.png" alt="Logo" className="h-12 w-auto sm:h-14" />
           </div>
 
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)} className="w-7 h-7 text-gray-700">
-              <FaBars className="w-7 h-7 text-gray-700" />
+              <FaBars className="w-7 h-7" />
             </button>
           </div>
 
+          {/* Desktop Links */}
           <ul className="hidden md:flex gap-5 text-sm text-gray-700 font-medium">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -60,7 +63,7 @@ export default function Navbar() {
                   to={link.to}
                   smooth={true}
                   duration={500}
-                  offset={-70}
+                  offset={-90}
                   spy={true}
                   className="hover:text-blue-600 cursor-pointer transition-colors"
                   activeClass="text-blue-600 font-semibold"
@@ -71,11 +74,12 @@ export default function Navbar() {
             ))}
           </ul>
 
+          {/* Desktop CTA */}
           <ScrollLink
             to="ordernow"
             smooth={true}
             duration={500}
-            offset={-70}
+            offset={-90}
             spy={true}
             className="hidden md:block bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded shadow-sm cursor-pointer"
           >
@@ -83,6 +87,7 @@ export default function Navbar() {
           </ScrollLink>
         </div>
 
+        {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden mt-4 flex flex-col gap-4 text-sm text-gray-700 font-medium">
             {navLinks.map((link) => (
@@ -91,7 +96,7 @@ export default function Navbar() {
                 to={link.to}
                 smooth={true}
                 duration={500}
-                offset={-70}
+                offset={-90}
                 onClick={() => setMenuOpen(false)}
                 spy={true}
                 className="hover:text-blue-600 cursor-pointer transition-colors"
@@ -104,7 +109,7 @@ export default function Navbar() {
               to="ordernow"
               smooth={true}
               duration={500}
-              offset={-70}
+              offset={-90}
               onClick={() => setMenuOpen(false)}
               spy={true}
               className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg w-max shadow-sm cursor-pointer"

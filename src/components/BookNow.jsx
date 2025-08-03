@@ -7,8 +7,8 @@ const cardVariants = {
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2 }
-  })
+    transition: { delay: i * 0.2 },
+  }),
 };
 
 export default function BookNow() {
@@ -20,28 +20,9 @@ export default function BookNow() {
     address: "",
     notes: "",
   });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.date || !formData.service || !formData.address) {
-      alert("Please fill in all required fields.");
-      return;
-    }
-    console.log("Booking Submitted:", formData);
-    setSubmitted(true);
-    setFormData({
-      name: "",
-      phone: "",
-      date: "",
-      service: "",
-      address: "",
-      notes: "",
-    });
-  };
 
   const details = [
     {
@@ -62,9 +43,13 @@ export default function BookNow() {
   ];
 
   return (
-    <section id="ordernow"
+    <section
+      id="ordernow"
       className="bg-cover bg-center py-20 px-4"
-      style={{ backgroundImage: "url('https://i.pinimg.com/1200x/8a/cd/e1/8acde1f3a0998f071f548ee57a28978a.jpg')" }}
+      style={{
+        backgroundImage:
+          "url('https://i.pinimg.com/1200x/8a/cd/e1/8acde1f3a0998f071f548ee57a28978a.jpg')",
+      }}
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -73,7 +58,6 @@ export default function BookNow() {
         transition={{ duration: 0.8 }}
         className="bg-white bg-opacity-90 backdrop-blur-md rounded-xl max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 p-8 shadow-xl"
       >
-
         {/* LEFT DETAILS */}
         <div>
           <motion.h2
@@ -116,13 +100,16 @@ export default function BookNow() {
           viewport={{ once: true }}
           className="bg-white p-8 rounded-xl shadow-lg w-full"
         >
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">Book a Service</h3>
-          {submitted && (
-            <div className="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded mb-4">
-              ✅ Booking submitted! We’ll contact you shortly.
-            </div>
-          )}
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">
+            Book a Service
+          </h3>
+
+          <form
+            className="space-y-4"
+            action="https://formsubmit.co/successlaundry001@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_captcha" value="false" />
             <input
               type="text"
               name="name"
